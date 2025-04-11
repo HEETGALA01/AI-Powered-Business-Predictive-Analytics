@@ -765,6 +765,18 @@ if app_mode == "Model Selection":
         st.warning("Please upload dataset first")
         
 # ---- 3️⃣ AI Chat Assistant ---- #
+import os
+import streamlit as st
+from langchain_community.llms import OpenAI
+from langchain.chains import ConversationChain
+from langchain.chains.conversation.memory import ConversationBufferWindowMemory
+from langchain_experimental.agents import create_pandas_dataframe_agent
+from streamlit_chat import message
+import pandas as pd
+
+# ✅ STEP 1: Set your OpenAI API Key here
+os.environ['OPENAI_API_KEY'] = "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"
+
 if app_mode == "Chat Assistant":
     st.header("💬 AI-Powered Chat Assistant")
 
